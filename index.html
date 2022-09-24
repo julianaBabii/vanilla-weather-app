@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>⛅Weather app</title>
+       <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -31,14 +32,15 @@
       <div class="border">
         <div class="search-center">
         <form class="city" id="search-form">
-          <input type="text" placeholder="Search by city" id="place" />
-          <input type="submit"class="btn btn-primary" value="Search " id="search-city" >
-          <input type="submit"class="btn btn-secondary" value="Current " id="current-city" >
+          <input type="search" placeholder="Search by city" id="search-form-input" autocomplete="off" />
+          <input type="submit"class="btn btn-primary" value="Search " id="submit-button" >
+          <input type="submit"class="btn btn-secondary" value="Current " id="current" >
         </form></div>
         <div class="row">
           <div class="col-3">
-            <h1>Lviv</h1>
-            <h2 id="time"></h2>
+            <h1 id="city">Lviv</h1>
+            <h2 id="date"></h2>
+             <h2 id="time"></h2>
           </div>
           
           <div class="col-3">
@@ -49,7 +51,7 @@
               
           </div>
           <div class="col-3">
-            <img src="media/sunny_sunshine_icon.png" alt="sun" class="weather-icon" />
+            <img src="#" alt="cloudy" class="weather-icon" id="icon" />
           </div>
 
           <div class="col-3">
