@@ -16,7 +16,8 @@
   width: 720px;
   padding: 50px;
   border-radius: 4px;
-  border-width: 4px;
+  border-width: 8px;
+  border-color: #829dbc;
 
   box-shadow: 10px 5px 5px grey;
 }
@@ -60,7 +61,4 @@ h5 {
   font-family: "Poppins", sans-serif;
   color: white;
   text-shadow: 1px 1px 2px grey;
-}
-div.col-2 {
-  padding: 0;
 }
