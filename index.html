@@ -5,8 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>⛅Weather app</title>
-       <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-    
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -28,74 +28,87 @@
   </head>
   <body>
     <div class="container">
-        <div class="padding">
-      <div class="border">
-        <div class="search-center">
-        <form class="city" id="search-form">
-          <input type="search" placeholder="Search by city" id="search-form-input" autocomplete="off" />
-          <input type="submit"class="btn btn-primary" value="Search " id="submit-button" >
-          <input type="submit"class="btn btn-secondary" value="Current " id="current" >
-        </form></div>
-        <div class="row">
-          <div class="col-3">
-            <h1 id="city">Lviv</h1>
-            <h2 id="date"></h2>
-             <h2 id="time"></h2>
-          </div>
-          
-          <div class="col-3">
-            <h4>Today</h4> 
-             <h3>  <span class="temperature" id="temperature">26</span>
-              <a href="#" id="celsius-link">°C</a> /
-              <a href="#" id="fahrenheit-link">°F</a> </h3>
-              
-          </div>
-          <div class="col-3">
-            <img src="#" alt="cloudy" class="weather-icon" id="icon" />
-          </div>
+      <div class="padding">
+        <div class="border">
+          <div class="background">
+            <div class="search-center">
+              <form class="city" id="search-form">
+                <input
+                  type="search"
+                  placeholder="Search by city"
+                  id="search-form-input"
+                  autocomplete="off"
+                />
+                <input
+                  type="submit"
+                  class="btn btn-primary"
+                  value="Search "
+                  id="submit-button"
+                />
+                <input
+                  type="submit"
+                  class="btn btn-secondary"
+                  value="Current "
+                  id="current"
+                />
+              </form>
+            </div>
+            <div class="city-display">
+              <div class="row">
+                <div class="col-3">
+                  <h2 id="city">Lviv</h2>
+                   <h5 id="time"></h5>
+                  <h5 id="date"></h5>
+                </div>
 
-          <div class="col-3">
-            <h5>Humidity <span id=humidity></span>% </h5>
-            <h5>Wind <span id=wind></span>km/h </h5>
-            <h5 id=description>Clear</h5>
+                <div class="col-3">
+                  <h4>Today</h4>
+                  <h3>
+                    <span class="temperature" id="temperature">26</span>
+                    <a href="#" id="celsius-link">°C</a> /
+                    <a href="#" id="fahrenheit-link">°F</a>
+                  </h3>
+                </div>
+                <div class="col-3">
+                  <img src="#" alt="cloudy" class="weather-icon" id="icon" />
+                </div>
+
+                <div class="col-3">
+                  <h5>Humidity <span id="humidity"></span>%</h5>
+                  <h5>Wind <span id="wind"></span>km/h</h5>
+                  <h5 id="description">Clear</h5>
+                </div>
+              </div>
+            </div>
+          </div>
+          <hr />
+
+          <div class="row weather-forecast">
+            <div class="col-4" id="day-weather">
+              <div class="weather-forecast-day">
+                ${formatDay(forecastDay.dt)}
+              </div>
+
+              <img
+                src="https://openweathermap.org/img/wn/${
+            forecastDay.weather[0].icon
+          }@2x.png"
+                alt="cloud"
+                width="42px"
+                class="weather-forecast-icon"
+              />
+              <div class="weather-forecast-temperatures">
+                <span class="weather-forecast-temperature-max">
+                  ${Math.round( forecastDay.temp.max )}°</span
+                >
+                <span class="weather-forecast-temperature-min">
+                  ${Math.round( forecastDay.temp.min )}°</span
+                >
+              </div>
+            </div>
+           </div>
           </div>
         </div>
-    </br>
-        <div class="row">
-          <div class="col-4">
-            <p class="weekday">Wed</p>
-            <p>+22°C</p>
-            <img src="media/ranny_thunderstorm_icon.png" alt="storm" class="weather-icon" />
-          </div>
-          <div class="col-4">
-            <p class="weekday">Thu</p>
-            <p>+18°C</p>
-            <img src="media/couldy_rainy_rainyday_icon.png" class="weather-icon" />
-          </div>
-          <div class="col-4">
-            <p class="weekday">Fri</p>
-            <p>+20°C</p>
-            <img src="media/cloudy_weather_icon.png" class="weather-icon" />
-          </div>
-          <div class="row">
-          <div class="col-4">
-            <p class="weekday">Sat</p>
-            <p>+22°C</p>
-            <img src="media/cloudy_weather_icon.png" class="weather-icon" />
-          </div>
-          <div class="col-4">
-            <p class="weekday">Sun</p>
-            <p>+26°C</p>
-            <img src="media/sunny_sunshine_icon.png" class="weather-icon" />
-          </div>
-          <div class="col-4">
-            <p class="weekday">Mon</p>
-            <p>+28°C</p>
-            <img src="media/sunny_sunshine_icon.png" class="weather-icon" />
-          </div>
-          </div>
-        </div>
-      </div>
         <small>
           <a
             href="https://github.com/julianaBabii/vanilla-weather-app"
@@ -109,6 +122,3 @@
     <script src="src/app.js"></script>
   </body>
 </html>
-
-
-	

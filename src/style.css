@@ -1,7 +1,7 @@
 .padding {
   padding: 25px;
 }
-.weather-icon {
+.weather-forecast-icon {
   display: block;
   margin: 0 auto;
   width: 60px;
@@ -9,7 +9,6 @@
   border-radius: 14px;
 }
 .border {
-  opacity: 0.9;
   background-repeat: inherit;
 
   background-image: url(https://images.unsplash.com/photo-1523793740499-83d43b75a2b5?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80);
@@ -40,7 +39,7 @@ input {
 ::placeholder {
   color: white;
 }
-.weekday {
+.weather-forecast {
   font-family: "Poppins", sans-serif;
   color: white;
   text-align: center;
